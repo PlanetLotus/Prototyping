@@ -8,12 +8,13 @@ public class Cube : MonoBehaviour {
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody>();
+        acceleration = new Vector3(7, 0, 7);
     }
 
     // Update is called once per frame
     void Update() {
         // Apply force = G * m1 * m2 / r^2
-        Vector3 force = Vector3.zero;
+        Vector3 force = acceleration;
 
         foreach (Sphere sphere in Spheres) {
             force += GetForceFromSphere(sphere);
@@ -35,4 +36,5 @@ public class Cube : MonoBehaviour {
     }
 
     private Rigidbody rb;
+    private Vector3 acceleration;
 }
