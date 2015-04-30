@@ -15,6 +15,6 @@ public class Sphere : MonoBehaviour {
 
     }
 
-    private const int _mass = 1;
+    private const int _mass = 100;
     private float _gravityEffect = _mass * Constants.G;
 }

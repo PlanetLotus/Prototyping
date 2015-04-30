@@ -29,8 +29,9 @@ public class Cube : MonoBehaviour {
         float distanceToSphereCenter = Vector3.Distance(transform.position, sphere.transform.position);
         float force = -sphere.GravityEffect / distanceToSphereCenter;
 
-        // Shouldn't the part in ( ) be normalized? Currently with my other values, normalizing it makes the object move way too slowly.
-        return (transform.position - sphere.transform.position) * force;
+        Vector3 direction = (transform.position - sphere.transform.position).normalized;
+
+        return direction * force;
     }
 
     private Rigidbody rb;
